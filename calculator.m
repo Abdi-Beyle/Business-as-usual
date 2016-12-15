@@ -199,7 +199,9 @@ function addition_Callback(hObject, eventdata, handles)
 % hObject    handle to addition (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+stradd = get(handles.inputtext,'String');
+stradd = strcat(stradd, '+');
+set(handles.inputtext, 'String', stradd);
 
 % --- Executes on button press in signchange.
 function signchange_Callback(hObject, eventdata, handles)
