@@ -95,41 +95,29 @@ function q8c2_Callback(hObject, eventdata, handles)
 % hObject    handle to q8c2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q8c2,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq8,'Visible','on'); % % Next question button appears
-set(handles.textwrong8,'Visible','on'); % Text appears with small explanation 
-set(handles.q8c1, 'Enable', 'off'); % Disable option 1
-set(handles.q8c3, 'Enable', 'off'); % Disable option 3
-set(handles.q8c4, 'Enable', 'off'); % Disable option 4
+set(handles.q8c2,'BackgroundColor','red','enable','off') % Tells the user they picked the right choice
+set(handles.nq7,'Visible','on'); % % Next question button appears
+set(handles.textright7,'Visible','on'); % Text appears with small explanation 
+set(handles.q7c2, 'Enable', 'off'); % Disable option 2
+set(handles.q7c3, 'Enable', 'off'); % Disable option 3
+set(handles.q7c4, 'Enable', 'off'); % Disable option 4
 
 % --- Executes on button press in q8c4.
 function q8c4_Callback(hObject, eventdata, handles)
 % hObject    handle to q8c4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q8c4,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq8,'Visible','on'); % % Next question button appears
-set(handles.textwrong8,'Visible','on'); % Text appears with small explanation 
-set(handles.q8c1, 'Enable', 'off'); % Disable option 1
-set(handles.q8c3, 'Enable', 'off'); % Disable option 3
-set(handles.q8c2, 'Enable', 'off'); % Disable option 2
+
 
 % --- Executes on button press in q8c3.
 function q8c3_Callback(hObject, eventdata, handles)
 % hObject    handle to q8c3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q8c3,'BackgroundColor','red','enable','off') % Tells the user they picked the right choice
-set(handles.nq8,'Visible','on'); % % Next question button appears
-set(handles.textwrong8,'Visible','on'); % Text appears with small explanation 
-set(handles.q8c1, 'Enable', 'off'); % Disable option 1
-set(handles.q8c2, 'Enable', 'off'); % Disable option 2
-set(handles.q8c4, 'Enable', 'off'); % Disable option 4
+
 
 % --- Executes on button press in nq8.
 function nq8_Callback(hObject, eventdata, handles)
 % hObject    handle to nq8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run q9;
-close q8;
