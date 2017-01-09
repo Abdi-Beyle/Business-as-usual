@@ -22,7 +22,7 @@ function varargout = q6(varargin)
 
 % Edit the above text to modify the response to help q6
 
-% Last Modified by GUIDE v2.5 08-Jan-2017 20:32:54
+% Last Modified by GUIDE v2.5 08-Jan-2017 19:19:34
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,9 +55,10 @@ function q6_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for q6
 handles.output = hObject;
 % Some parts of this gui will initially be hidden from the user
-set(handles.nq6,'Visible','off'); % Option to go to next question is not available until user has picked an option
-set(handles.textwrong6,'Visible','off');  % Incorrect answer explanation hidden
-set(handles.textright6,'Visible','off'); % Correct answer explanation hidden
+
+set(handles.nq5,'Visible','off'); % Option to go to next question is not available until user has picked an option
+set(handles.textwrong5,'Visible','off');  % Incorrect answer explanation hidden
+set(handles.textright5,'Visible','off'); % Correct answer explanation hidden
 
 % Update handles structure
 guidata(hObject, handles);
@@ -82,53 +83,31 @@ function q6c1_Callback(hObject, eventdata, handles)
 % hObject    handle to q6c1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q6c1,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq6,'Visible','on'); % % Next question button appears
-set(handles.textwrong6,'Visible','on'); % Text appears with small explanation 
-set(handles.q6c2, 'Enable', 'off'); % Disable option 2
-set(handles.q6c3, 'Enable', 'off'); % Disable option 3
-set(handles.q6c4, 'Enable', 'off'); % Disable option 4
+
 
 % --- Executes on button press in q6c2.
 function q6c2_Callback(hObject, eventdata, handles)
 % hObject    handle to q6c2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q6c2,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq6,'Visible','on'); % % Next question button appears
-set(handles.textwrong6,'Visible','on'); % Text appears with small explanation 
-set(handles.q6c1, 'Enable', 'off'); % Disable option 1
-set(handles.q6c3, 'Enable', 'off'); % Disable option 3
-set(handles.q6c4, 'Enable', 'off'); % Disable option 4
+
 
 % --- Executes on button press in q6c4.
 function q6c4_Callback(hObject, eventdata, handles)
 % hObject    handle to q6c4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q6c4,'BackgroundColor','green','enable','off') % Tells the user they picked the right choice
-set(handles.nq6,'Visible','on'); % % Next question button appears
-set(handles.textright6,'Visible','on'); % Text appears with small explanation 
-set(handles.q6c1, 'Enable', 'off'); % Disable option 1
-set(handles.q6c3, 'Enable', 'off'); % Disable option 3
-set(handles.q6c2, 'Enable', 'off'); % Disable option 2
+
 
 % --- Executes on button press in q6c3.
 function q6c3_Callback(hObject, eventdata, handles)
 % hObject    handle to q6c3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q6c3,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq6,'Visible','on'); % % Next question button appears
-set(handles.textwrong6,'Visible','on'); % Text appears with small explanation 
-set(handles.q6c1, 'Enable', 'off'); % Disable option 1
-set(handles.q6c2, 'Enable', 'off'); % Disable option 2
-set(handles.q5c4, 'Enable', 'off'); % Disable option 4
 
-% --- Executes on button press in nq6.
-function nq6_Callback(hObject, eventdata, handles)
-% hObject    handle to nq6 (see GCBO)
+
+% --- Executes on button press in pushbutton5.
+function pushbutton5_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run q7;
-close q6;

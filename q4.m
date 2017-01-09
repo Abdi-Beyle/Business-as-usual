@@ -22,7 +22,7 @@ function varargout = q4(varargin)
 
 % Edit the above text to modify the response to help q4
 
-% Last Modified by GUIDE v2.5 05-Jan-2017 12:14:37
+% Last Modified by GUIDE v2.5 08-Jan-2017 19:28:39
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,6 +55,11 @@ function q4_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for q4
 handles.output = hObject;
 
+% Some parts of this gui will initially be hidden from the user
+set(handles.nq4,'Visible','off'); % Option to go to next question is not available until user has picked an option
+set(handles.textwrong4,'Visible','off');  % Incorrect answer explanation hidden
+set(handles.textright4,'Visible','off'); % Correct answer explanation hidden
+
 % Update handles structure
 guidata(hObject, handles);
 
@@ -73,39 +78,59 @@ function varargout = q4_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in q4c1.
+function q4c1_Callback(hObject, eventdata, handles)
+% hObject    handle to q4c1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.pushbutton1,'string','Incorrect!!' ,'enable','off')
-pause(2);
-closereq;
-GamePlotFigure(q5);
-% --- Executes on button press in pushbutton2.
-function pushbutton2_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton2 (see GCBO)
+set(handles.q4c1,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
+set(handles.nq4,'Visible','on'); % % Next question button appears
+set(handles.textwrong4,'Visible','on'); % Text appears with small explanation 
+set(handles.q4c2, 'Enable', 'off'); % Disable option 2
+set(handles.q4c3, 'Enable', 'off'); % Disable option 3
+set(handles.q4c4, 'Enable', 'off'); % Disable option 4
+
+
+% --- Executes on button press in q4c2.
+function q4c2_Callback(hObject, eventdata, handles)
+% hObject    handle to q4c2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.pushbutton2,'string','Incorrect!!' ,'BackgroundColor','red','enable','off')
-pause(2);
-closereq;
-GamePlotFigure(q5);
-% --- Executes on button press in pushbutton3.
-function pushbutton3_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
+set(handles.q4c2,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
+set(handles.nq4,'Visible','on'); % % Next question button appears
+set(handles.textwrong4,'Visible','on'); % Text appears with small explanation 
+set(handles.q4c1, 'Enable', 'off'); % Disable option 1
+set(handles.q4c3, 'Enable', 'off'); % Disable option 3
+set(handles.q4c4, 'Enable', 'off'); % Disable option 4
+
+% --- Executes on button press in q4c4.
+function q4c4_Callback(hObject, eventdata, handles)
+% hObject    handle to q4c4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.pushbutton3,'string','Incorrect!!' ,'BackgroundColor','red','enable','off')
-pause(2);
-closereq;
-GamePlotFigure(q5);
-% --- Executes on button press in pushbutton4.
-function pushbutton4_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton4 (see GCBO)
+set(handles.q4c4,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
+set(handles.nq4,'Visible','on'); % % Next question button appears
+set(handles.textwrong4,'Visible','on'); % Text appears with small explanation 
+set(handles.q4c2, 'Enable', 'off'); % Disable option 2
+set(handles.q4c3, 'Enable', 'off'); % Disable option 3
+set(handles.q4c1, 'Enable', 'off'); % Disable option 1
+
+% --- Executes on button press in q4c3.
+function q4c3_Callback(hObject, eventdata, handles)
+% hObject    handle to q4c3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.pushbutton4,'string','Correct!!' ,'BackgroundColor','green','enable','off')
-pause(2);
-closereq;
-GamePlotFigure(q5);
+set(handles.q4c3,'BackgroundColor','green','enable','off') % Tells the user they picked the wrong choice
+set(handles.nq4,'Visible','on'); % % Next question button appears
+set(handles.textright4,'Visible','on'); % Text appears with small explanation 
+set(handles.q4c2, 'Enable', 'off'); % Disable option 2
+set(handles.q4c1, 'Enable', 'off'); % Disable option 1
+set(handles.q4c4, 'Enable', 'off'); % Disable option 4
+
+% --- Executes on button press in nq4.
+function nq4_Callback(hObject, eventdata, handles)
+% hObject    handle to nq4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+run q5;
+close q4;

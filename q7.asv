@@ -123,7 +123,7 @@ set(handles.q7c3,'BackgroundColor','red','enable','off') % Tells the user they p
 set(handles.nq7,'Visible','on'); % % Next question button appears
 set(handles.textwrong7,'Visible','on'); % Text appears with small explanation 
 set(handles.q7c2, 'Enable', 'off'); % Disable option 2
-set(handles.q7c1, 'Enable', 'off'); % Disable option 1
+set(handles.q7c3, 'Enable', 'off'); % Disable option 3
 set(handles.q7c4, 'Enable', 'off'); % Disable option 4
 
 % --- Executes on button press in nq7.
@@ -131,5 +131,3 @@ function nq7_Callback(hObject, eventdata, handles)
 % hObject    handle to nq7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run q8;
-close q7;

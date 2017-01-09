@@ -95,7 +95,7 @@ function q5c2_Callback(hObject, eventdata, handles)
 % hObject    handle to q5c2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q5c2,'BackgroundColor','green','enable','off') % Tells the user they picked the wrong choice
+set(handles.q5c2,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
 set(handles.nq5,'Visible','on'); % % Next question button appears
 set(handles.textright5,'Visible','on'); % Text appears with small explanation 
 set(handles.q5c1, 'Enable', 'off'); % Disable option 1
@@ -107,29 +107,17 @@ function q5c4_Callback(hObject, eventdata, handles)
 % hObject    handle to q5c4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q5c4,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq5,'Visible','on'); % % Next question button appears
-set(handles.textwrong5,'Visible','on'); % Text appears with small explanation 
-set(handles.q5c2, 'Enable', 'off'); % Disable option 2
-set(handles.q5c3, 'Enable', 'off'); % Disable option 3
-set(handles.q5c1, 'Enable', 'off'); % Disable option 1
+
 
 % --- Executes on button press in q5c3.
 function q5c3_Callback(hObject, eventdata, handles)
 % hObject    handle to q5c3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q5c3,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq5,'Visible','on'); % % Next question button appears
-set(handles.textwrong5,'Visible','on'); % Text appears with small explanation 
-set(handles.q5c2, 'Enable', 'off'); % Disable option 2
-set(handles.q5c1, 'Enable', 'off'); % Disable option 1
-set(handles.q5c4, 'Enable', 'off'); % Disable option 4
+
 
 % --- Executes on button press in nq5.
 function nq5_Callback(hObject, eventdata, handles)
 % hObject    handle to nq5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run q6;
-close q5;

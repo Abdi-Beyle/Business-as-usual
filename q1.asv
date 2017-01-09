@@ -22,7 +22,7 @@ function varargout = q1(varargin)
 
 % Edit the above text to modify the response to help q1
 
-% Last Modified by GUIDE v2.5 08-Jan-2017 17:35:06
+% Last Modified by GUIDE v2.5 08-Jan-2017 16:31:52
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -54,7 +54,7 @@ function q1_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for q1
 handles.output = hObject;
-% Some parts of this gui will initially be hidden from the user
+% 
 set(handles.nq1,'Visible','off'); % Option to go to next question is not available until user has picked an option
 set(handles.textwrong,'Visible','off');  % Incorrect answer explanation hidden
 set(handles.textright,'Visible','off'); % Correct answer explanation hidden 
@@ -105,7 +105,7 @@ function q1c1_Callback(hObject, eventdata, handles)
 % hObject    handle to q1c1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q1c1,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
+set(handles.q1c1,'string','BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
 set(handles.nq1,'Visible','on'); % % Next question button appears
 set(handles.textwrong,'Visible','on'); % Text appears with small explanation 
 set(handles.q1c2, 'Enable', 'off'); % Disable option 2
@@ -127,29 +127,20 @@ function q1c4_Callback(hObject, eventdata, handles)
 % hObject    handle to q1c4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q1c4,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq1,'Visible','on'); % Next question button appears 
-set(handles.textwrong,'Visible','on'); % Text appears with small explanation
-set(handles.q1c1, 'Enable', 'off'); % Disable option 1
-set(handles.q1c3, 'Enable', 'off'); % Disable option 3
-set(handles.q1c2, 'Enable', 'off'); % Disable option 2
-
+set(handles.q1c4,'string','Incorrect!!','BackgroundColor','red','enable','off')
+set(handles.nq1,'Visible','on');
 % --- Executes on button press in q1c3.
 function q1c3_Callback(hObject, eventdata, handles)
 % hObject    handle to q1c3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.q1c3,'BackgroundColor','red','enable','off') % Tells the user they picked the wrong choice
-set(handles.nq1,'Visible','on'); % Next question button appears 
-set(handles.textwrong,'Visible','on'); % Text appears with small explanation
-set(handles.q1c1, 'Enable', 'off'); % Disable option 1
-set(handles.q1c3, 'Enable', 'off'); % Disable option 2
-set(handles.q1c4, 'Enable', 'off'); % Disable option 4
+set(handles.q1c3,'string','Incorrect!!','BackgroundColor','red','enable','off')
+set(handles.nq1,'Visible','on');
+set(handles.textwrong,'Visible','on');
 
 % --- Executes on button press in nq1.
 function nq1_Callback(hObject, eventdata, handles)
 % hObject    handle to nq1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-run q2;
-close q1; 
+ set(handles.nq1,'Visible','on');
