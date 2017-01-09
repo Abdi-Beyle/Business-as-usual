@@ -22,7 +22,7 @@ function varargout = q10(varargin)
 
 % Edit the above text to modify the response to help q10
 
-% Last Modified by GUIDE v2.5 08-Jan-2017 21:34:21
+% Last Modified by GUIDE v2.5 09-Jan-2017 14:05:40
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -129,8 +129,10 @@ set(handles.q10c1, 'Enable', 'off'); % Disable option 1
 set(handles.q10c4, 'Enable', 'off'); % Disable option 4
 
 
-% --- Executes on button press in pushbutton5.
-function pushbutton5_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton5 (see GCBO)
+% --- Executes on button press in nq10.
+function nq10_Callback(hObject, eventdata, handles)
+% hObject    handle to nq10 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+run endpage;
+close q10;
