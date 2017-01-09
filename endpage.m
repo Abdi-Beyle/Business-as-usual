@@ -22,7 +22,7 @@ function varargout = endpage(varargin)
 
 % Edit the above text to modify the response to help endpage
 
-% Last Modified by GUIDE v2.5 08-Jan-2017 22:00:48
+% Last Modified by GUIDE v2.5 09-Jan-2017 14:19:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -70,9 +70,21 @@ function varargout = endpage_OutputFcn(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
-varargout{1} = handles.output;
-axes(handles.axes1)
-matlabImage = imread('fireworks.gif');
-image(matlabImage)
-axis off
-axis image
+
+
+
+% --- Executes on button press in closebtn.
+function closebtn_Callback(hObject, eventdata, handles)
+% hObject    handle to closebtn (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close endpage
+
+% --- Executes on button press in submit.
+function submit_Callback(hObject, eventdata, handles)
+% hObject    handle to submit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+rev = get(handles.uireview,'SelectedObject');
+actrev = get(rev, 'string')
+set(handles.submit, 'Enable', 'off');
